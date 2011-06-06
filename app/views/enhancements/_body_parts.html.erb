@@ -1,0 +1,26 @@
+  <%cookies["enhancements"] == "displayed" ? hidden = false : hidden = true%>
+  <%style = cookies["enhancements_style"].gsub('---',";") if cookies["enhancements_style"]%>
+  <div id="enhancements" class="nice_outer_blue_tab"  style="<%= hidden ? "height:35px;" : "" %><%=style%>">
+  <div id="enhancements_header" class="<%= hidden ? "nice_inner_blue_tab_js_hover" : "nice_inner_blue_tab" %>"
+       onclick="toggle_enhancements();toggleClass(this,'nice_inner_blue_tab_js_hover','nice_inner_blue_tab')">
+    Enhancements - HOTKEY "E"
+  </div>
+  <table id="enhancements_table" style="<%= hidden ? "display:none;" : "" %>">
+    <tr>
+      <td>
+        <div style="position:relative;width:150px;height:350px;">
+          <% @current_char.body_pics.each do |be| %>
+              <%= image_tag(be, :style=>"position:absolute;padding:20px;") %>
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <% @current_char.body_parts.each do |be| %>
+            <div class="textbox"><%= be.name%>: X <%= be.multi%></div>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+
+</div>

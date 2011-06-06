@@ -1,0 +1,10 @@
+<% if wtc %>
+
+    <div class="active" id="inventar_weapon_<%= wtc.id %>" style="height:100%;width:100%">
+     <%=item_image_tag(wtc.weapon)%>
+    </div>
+    <%= draggable_element("inventar_weapon_#{wtc.id}", :revert=>true) %>
+<% else %>
+
+    waffe
+<% end %>

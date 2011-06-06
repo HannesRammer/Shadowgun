@@ -1,0 +1,87 @@
+<p>
+  <b>Name:</b>
+  <%= h @character.name %>
+</p>
+
+<p>
+  <b>x:</b>
+  <%= h @character.coordinates.x %>
+  <b>y:</b>
+  <%= h @character.coordinates.y %>
+  <b>field:</b>
+  <%= h @character.coordinates.field %>
+</p>
+
+
+<p>
+  <b>Max ability points:</b>
+  <%= h @character.max_ability_points %>
+  <b>Mind:</b>
+  <%= h @character.mind %>
+
+  <b>Agility:</b>
+  <%= h @character.agility %>
+
+  <b>Body:</b>
+  <%= h @character.body %>
+
+  <b>Charisma:</b>
+  <%= h @character.charisma %>
+
+  <b>Psychic:</b>
+  <%= h @character.psychic %>
+</p>
+
+<p>
+  <b>Current life:</b>
+  <%= h @character.current_life %>
+  <b>Max life:</b>
+  <%= h @character.max_life %>
+</p>
+
+<p>
+  <b>Current mana:</b>
+  <%= h @character.current_mana %>
+  <b>Max mana:</b>
+  <%= h @character.max_mana %>
+</p>
+
+
+<p>
+  <b>Current exp:</b>
+  <%= h @character.current_exp %>
+
+  <b>Next lev exp:</b>
+  <%= h @character.next_lev_exp %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= h @character.level %>
+</p>
+
+<p>
+  <b>Chance to hit:</b>
+  <%= h @character.chance_to_hit %>
+
+  <b>Chance of max damage:</b>
+  <%= h @character.chance_of_max_damage %>
+</p>
+
+
+<p>
+  <b>Win:</b>
+  <%= h @character.win %>
+
+  <b>Lose:</b>
+  <%= h @character.lose %>
+</p>
+
+<p>
+  <b>gold:</b>
+  <%= h @character.gold %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

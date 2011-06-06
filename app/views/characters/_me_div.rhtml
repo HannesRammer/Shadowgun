@@ -1,0 +1,36 @@
+<% area = @current_char.current_area %>
+<% area_style = "style='background-color:#{current_area_color(area)};opacity:0.3;'" %>
+
+
+<table id="me_table" class="me_table <%= area %>">
+  <tr>
+    <td>
+      <%= char_image_tag(@current_char, {}, "midi") %>
+      <%= @current_char.name %>
+      <div class="level">Lvl
+        <div id="my_level"><%= @current_char.level %></div>
+      </div>
+      <%#=render :partial=>"characters/char_extras", :locals=>{:char => @current_char}%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="life_bar_<%= @current_char.id %>">
+        <%= render :partial => "characters/life_bar", :locals => {:char=> @current_char} %>
+      </div>
+
+      <% if !(params[:action].include?("fight")) %>
+          <div style="height:10px;width:100px;background-color:#e77e7e;">
+            <div style=<%= "height:5px;width:#{f2(@current_char.xp_in_percent)}%;background-color:#f0eba0;" %>>
+            </div>
+          </div>
+          <%= "#{f2(@current_char.current_exp) }/#{f2(@current_char.next_lev_exp) }" %>
+      <% end %>
+      <div id="hit_<%= @current_char.id %>"></div>
+    
+    </td>
+  </tr>
+
+      <%#= @current_char.current_area %>
+
+</table>

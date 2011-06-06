@@ -1,0 +1,24 @@
+<h1>Editing pc_char_dialog_set_to_user_char</h1>
+
+<% form_for(@pc_char_dialog_set_to_user_char) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :set_id %><br />
+    <%= f.text_field :set_id %>
+  </p>
+  <p>
+    <%= f.label :pc_char %><br />
+    <%= f.text_field :pc_char %>
+  </p>
+  <p>
+    <%= f.label :user_char %><br />
+    <%= f.text_field :user_char %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @pc_char_dialog_set_to_user_char %> |
+<%= link_to 'Back', pc_char_dialog_set_to_user_chars_path %>

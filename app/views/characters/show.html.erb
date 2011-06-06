@@ -1,0 +1,5 @@
+<% if params[:admin] == "true" %>
+    <%= render(:partial => 'characters/admin_show') %>
+<% else %>
+    <%= render(:partial => 'characters/user_show') %>
+<% end %>

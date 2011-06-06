@@ -1,0 +1,7 @@
+
+<% AreaMap.find_all_by_field_and_field_type(@field,"town").each do |building| %>
+    <% style = "position:absolute;left:#{building.x_min}px;top:#{building.y_min}px;width:#{building.x_max}px;height:#{building.y_max}px;" %>
+    <div id="building_<%= building.id %>_map_div" class="building" style="<%= style %>">
+      <%= image_tag("world/town.jpg", :width=>"100%", :height=>"100%") %>
+    </div>
+<% end %>

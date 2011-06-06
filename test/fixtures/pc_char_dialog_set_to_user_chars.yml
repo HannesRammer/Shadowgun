@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dialog_set_id: 1
+  pc_char_id: 1
+  user_char_id: 1
+
+two:
+  dialog_set_id: 1
+  pc_char_id: 1
+  user_char_id: 1

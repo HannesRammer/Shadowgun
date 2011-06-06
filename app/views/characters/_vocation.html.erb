@@ -1,0 +1,5 @@
+Weg <%= collection_select(:vocation, :vocation_id, vocations, :id, :name, {:prompt => true, :selected=>@current_char.vocation_id}) %>
+<br/>
+current <%= @current_char.vocation_name %>
+
+ 

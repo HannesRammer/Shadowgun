@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  character_id: 1
+  digi_stone_id: 1
+  percent: 1
+  in_use: false
+
+two:
+  character_id: 1
+  digi_stone_id: 1
+  percent: 1
+  in_use: false

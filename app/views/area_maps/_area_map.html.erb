@@ -1,0 +1,28 @@
+<% if @town_room_id  %>
+    <div id="map" style="background: transparent url(/area_maps/code_image/<%=@town_room_id %>) no-repeat scroll left bottom;">
+<% else %>
+    <div id="map" style="background: transparent url(/images/world/<%map_name = field_name(@field)%><%=map_name%>.jpg) no-repeat scroll left bottom;">
+<% end %>
+  <% @maps.each do |m| %>
+
+      <% color = current_area_color(m.field_type) %>
+
+      <div id='am_<%= m.id %>' class='drsElement drsMoveHandle' style='left: <%=m.x_min%>px; top: <%=m.y_min%>px; width: <%=m.x_max%>px; height: <%=m.y_max%>px; background: <%=color%>;opacity:0.3;'>
+
+        <%if m.field_type == "room" || m.field_type == "town"%>
+       <%=m.name%>
+        <%end%>
+
+        <%= link_to_remote "x", :url =>{:controller=>:area_maps, :action=>:delete_area, :id=>m.id} %>
+        <%= link_to("edit", :controller=>:area_maps, :action=>:edit, :id=>m.id) if !is_world?(m.field_type)  %>
+      </div>
+
+  <% end %>                                     
+  <div style="width:30px;background-color:#ffffff;color:#000000;"><%=field_name(@field) %></div>
+</div>
+<div id="test"></div>
+
+
+
+
+

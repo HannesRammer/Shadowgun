@@ -1,0 +1,27 @@
+<%cookies["quests"] == "displayed" ? hidden = true : hidden = false%>
+<%style = cookies["quests_style"].gsub('---',";") if cookies["quests_style"]%>
+<div id="quests" class="nice_outer_blue_tab" style="<%= hidden ? "height:35px;" : "" %><%=style%>">
+  <div id="quests_header" class="<%= hidden ? "nice_inner_blue_tab_js_hover" : "nice_inner_blue_tab"  %>"
+       onclick="toggle_quests();toggleClass(this,'nice_inner_blue_tab_js_hover','nice_inner_blue_tab')" >
+    Quests - HOTKEY "Q"
+  </div>
+
+  <table id="quests_table" style="<%= hidden ? "display:none;" : "" %>">
+    <tr>
+      <td><%= label_tag :title %></td>
+      <td><%= label_tag :status %></td>
+      <td><%= label_tag :completed %></td>
+    </tr>
+
+    <% @current_char.quests.each do |quest| %>
+        <tr>
+          <td><%= quest.title %></td>
+          <td><%= quest.status_for_user_char(@current_char.id)  %></td>
+          <td><%= image_tag("extras/tick.png") if quest.completed(@current_char.id) %></td>
+        </tr>
+
+    <% end %>
+  </table>
+
+</div>
+

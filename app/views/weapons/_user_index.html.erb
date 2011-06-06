@@ -1,0 +1,34 @@
+<h1>Listing weapons</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Range</th>
+    <th>Damage</th>
+    <th>Level</th>
+    <th>Damage type</th>
+    <th>Hit time</th>
+    <th>worth</th>
+  </tr>
+
+  <% for wtc in wtcs %>
+
+      <% weapon = wtc.weapon %>
+      <tr>
+        <td><%= h weapon.name %></td>
+        <td><%= h weapon.range %></td>
+        <td><%= h weapon.damage %></td>
+        <td><%= h weapon.level %></td>
+        <td><%= h weapon.damage_type %></td>
+        <td><%= h weapon.hit_time %></td>
+        <td><%= h weapon.worth %></td>
+        <td><%= link_to_remote('drop it', :url=>{:controller => :weapons, :action=>:drop, :uid => params[:uid], :wtc_id=>wtc.id}, :confirm => 'Are you sure?' ) %></td>
+        <td><%= link_to_remote('pick up', :url=>{:controller => :weapons, :action=>:pick_up, :uid => params[:uid], :wtc_id=>wtc.id} ) %></td>
+        <td><%= link_to_remote('activate', :url=>{:controller => :weapons, :action=>:use, :uid => params[:uid], :wtc_id=>wtc.id} ) if !wtc.active %></td>
+        <td><%= link_to_remote('deactivate', :url=>{:controller => :weapons, :action=>:unuse, :uid => params[:uid], :wtc_id=>wtc.id} ) if  wtc.active %></td>
+
+      </tr>
+  <% end %>
+</table>
+
+<br/>

@@ -1,0 +1,548 @@
+body {
+
+    background-color: #000000;
+    border-color: #3f3f3f;
+    color: #cccccc;
+}
+
+a {
+    text-decoration: none;
+    color: #ff0000;
+    font-size: large;
+}
+
+.content {
+    margin: 0 auto;
+    width: 1024px;
+}
+
+.relative_content {
+    position: relative;
+    top: 20px;
+    left: 50px;
+}
+
+#map {
+/*width:886px;height:675px;background:transparent url(/images/europe.jpg) no-repeat scroll left bottom;"*/
+    width: 600px;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+
+}
+
+#shop {
+    background: transparent url(/images/backgrounds/aufzug7.png) no-repeat scroll left bottom;
+    width: 1024px;
+    height: 768px; /* position: fixed;*/
+    top: 0;
+    left: 400px;
+}
+
+#navi {
+    color: #7cb7f1; /* width: 250px;*/
+    position: relative;
+    top: 0;
+    right: 0;
+    border: 1px solid #ffff99;
+}
+
+#main_navi {
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 650px;
+}
+
+.enemy {
+    width: 100px;
+    color: #e77e7e;
+}
+
+.enemy_div {
+    border: 1px solid #f00;
+}
+
+.enemy_right_nav_table {
+    width: 100px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+#me_div {
+    border: 1px solid #0000FF;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.selected {
+    border: 1px solid #fff;
+    width: 102px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+/*chat style*/
+#chat {
+
+}
+
+#chat_data {
+    color: #7cb7f1;
+    overflow: auto;
+    width: 250px;
+    height: 100px;
+    border: 1px solid #7cb7f1
+}
+
+/*fight_data style*/
+
+#fight_data {
+    color: #e77e7e;
+    position: absolute;
+    overflow: auto;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #e77e7e
+}
+
+#arena {
+    border: 1px solid #FF0000;
+    height: 500px;
+    padding: 25px;
+    width: 580px;
+}
+
+.ultra {
+    color: #cc0000 !important;
+}
+
+.asso {
+    color: #ff6600 !important;
+}
+
+.hard {
+    color: #ffff00 !important;
+}
+
+.you {
+    color: #7cb7f1 !important;
+}
+
+.easy {
+    color: #00ff00 !important;
+}
+
+.nothing {
+    color: #aaaaaa !important;
+}
+
+/*START glass effect countdown divs block*/
+
+#atk_div {
+    position: relative;
+    height: 25px;
+    width: 75px;
+}
+
+#atk {
+    position: absolute;
+    z-index: 2;
+}
+
+#decount_atk_empty {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#decount_atk_full {
+    height: 0;
+    background-color: #666666;
+    position: relative;
+    z-index: 1;
+}
+
+/*END glass effect countdown divs block*/
+
+.life {
+/*background-color:#8fe276;*/
+    background: transparent url(/images/life.png) no-repeat scroll left bottom
+}
+
+.life_background {
+/*background-color:#e77e7e;*/
+    background: transparent url(/images/life_background.png) no-repeat scroll left bottom
+}
+
+#enhancements {
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    z-index: 999;
+    opacity: 0.77
+}
+
+#enhancements_header {
+    height: 20px;
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 290px;
+}
+
+/*inventar*/
+.float_box {
+    position: relative;
+    top: 80px;
+    left: 360px;
+    cursor: move;
+
+}
+
+#inventar {
+/*background: transparent url(/images/backgrounds/inventar_bg.jpg) no-repeat scroll left bottom;*/
+    padding: 30px;
+    height: 400px;
+    position: absolute;
+    z-index: 999;
+    width: 195px;
+    opacity: 0.77
+
+}
+
+#inventar_header {
+    height: 20px;
+    width: 245px;
+
+}
+
+.inventar {
+    height: 50px;
+    width: 50px;
+    border: solid 1px #ff0000;
+
+}
+
+.inventar_hover {
+    background-color: #ffffcc;
+    border: solid 1px #00ff00;
+}
+
+.inventar_box {
+    position: absolute;
+    top: 220px;
+    height: 200px;
+    width: 200px;
+    border: solid 1px #ff0000;
+}
+
+#inventar_weapon_id {
+    left: 30px;
+    position: absolute;
+    top: 110px;
+    height: 100px;
+}
+
+#inventar_head_id {
+    left: 100px;
+    position: absolute;
+    top: 40px;
+}
+
+#inventar_body_id {
+    left: 100px;
+    position: absolute;
+    top: 110px;
+    height: 100px;
+}
+
+#inventar_shield_id {
+    left: 170px;
+    position: absolute;
+    top: 110px;
+    height: 100px;
+}
+
+.item {
+    float: left;
+    position: relative;
+}
+
+.close {
+    background: #ccccff url(/images/extras/nukunukumail_small.gif) no-repeat scroll right top;
+    color: #006666;
+    position: absolute;
+
+    top: 0px;
+    left: 55px;
+    z-index: 9999;
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+.open {
+    background: #ccccff url(/images/extras/details_icon.jpg) no-repeat scroll left bottom;
+    color: #ff0000;
+    position: absolute;
+    overflow: hidden;
+    width: 13px;
+    height: 13px;
+    top: 0px;
+    right: 0px;
+    z-index: 9998;
+    cursor: help
+}
+
+.closed {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+}
+
+.item_details_on {
+
+    font-family: verdana, arial;
+    font-size: 10pt;
+    min-width: 200px;
+    background: #000;
+    z-index: 99999;
+    position: absolute;
+
+}
+
+.item_details_on .title {
+
+}
+
+.item_details_on .text {
+
+    color: #cccccc;
+    position: relative;
+    left: 20px;
+}
+
+.item_menu_on {
+    width: 150px;
+    background: #003333;
+    color: aliceblue;
+    position: absolute;
+    z-index: 9999;
+}
+
+.item_menu_on .title {
+    font-size: larger;
+    color: #999900;
+}
+
+.item_menu_on .text {
+    font-size: larger;
+    color: #009999;
+    position: relative;
+    left: 20px;
+}
+
+/*quests_box*/
+#quests {
+    top: 200px;
+    left: 200px;
+    border: 1px solid #000000;
+    background-color: #666666;
+    width: 300px;
+    position: absolute;
+    z-index: 999;
+    opacity: 0.77
+}
+
+#quests_header {
+    height: 20px;
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 290px;
+}
+
+#quests_table {
+    padding: 20px;
+    width: 300px;
+}
+
+/*SHOP*/
+
+.trader_box {
+    padding: 30px;
+    background-color: #666666;
+    height: 300px;
+    width: 250px;
+    border: solid 1px #000000;
+    float: left;
+}
+
+.number {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    color: #006666;
+    background-color: #ccccff;
+    border: 1px solid #000000;
+    height: 15px;
+}
+
+.text_number {
+    bottom: 0;
+    position: absolute;
+    right: -22px;
+    color: #006666;
+    background-color: #ccccff;
+    border: 1px solid #000000;
+    height: 15px;
+}
+
+.message {
+    background-color: #003333;
+    font-size: 12px;
+    color: #000;
+    position: fixed;
+    top: 350px;
+    left: 450px;
+    z-index: 9999;
+    border: 3px solid #000000;
+    padding-right: 30px;
+}
+
+.char_name {
+    font-size: larger;
+    color: #999900;
+    position: relative;
+    right: 20px;
+}
+
+.user_dialog {
+    font-size: larger;
+    color: #00cccc;
+}
+
+.char_dialog {
+    font-size: larger;
+    color: #000;
+}
+
+#me_talk_map_div a:hover {
+    color: #000;
+
+}
+
+.message a:hover {
+    color: #ffffff;
+    background-position: 0% -42px;
+}
+
+.message a:visited {
+    color: #ffffff;
+}
+
+.message li {
+    height: 24px;
+    list-style: none;
+
+}
+
+.char_buttons {
+    position: relative;
+    bottom: 65px;
+    left: 55px;
+}
+
+/*character user edit   */
+
+#char_edit_main {
+
+}
+
+#char_edit_left {
+    position: absolute;
+    height: 360px;
+    width: 950px;
+
+    background: #ccccff url(/images/backgrounds/char_edit_bg.jpg) repeat scroll left bottom;
+
+}
+
+#char_edit_right {
+    position: absolute;
+    height: 360px;
+    left: 225px;
+
+    width: 414px;
+
+}
+
+/* character edit */
+#details {
+
+}
+
+#attributes {
+    background: #ccccff url(/images/backgrounds/char_edit_top.jpg) no-repeat scroll left bottom;
+    width: 414px;
+    height: 262px;
+}
+
+#attributes_list {
+    position: relative;
+    top: 80px;
+    left: 50px;
+}
+
+#results {
+    background: #ccccff url(/images/backgrounds/char_edit_bottom.jpg) no-repeat scroll left bottom;
+    width: 414px;
+    min-height: 158px;
+    padding:5px;
+    color: #000000;
+    position: relative;
+    bottom: 13px;
+}
+
+#main_results {
+    position: relative;
+    top: 5px;
+    left: 50px;
+}
+
+#weapons {
+    position: absolute;
+    top: 400px;
+
+}
+
+/*end character edit */
+
+.wald {
+    background-color: #00cc33;
+    color: #000000;
+}
+
+.berg {
+    background-color: #cccccc;
+    color: #000000;
+}
+
+.wasser {
+    background-color: #00cccc;
+    color: #000000;
+}
+
+.error {
+    background-color: #ff0033;
+    color: #000000;
+}
+
+.pointer {
+    cursor: pointer
+}
+
+.help {
+    cursor: help
+}

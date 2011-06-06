@@ -1,0 +1,27 @@
+<% cookies["character"] == "displayed" ? hidden = false : hidden = true %>
+<% style = cookies["inventar_style"].gsub('---', ";") if cookies["inventar_style"] %>
+<div id="inventar" class="nice_outer_blue_tab" style="<%= hidden ? "height:35px;" : "" %><%= style %>">
+  <div id="inventar_header" class="<%= hidden ? "nice_inner_blue_tab_js_hover" : "nice_inner_blue_tab" %>"
+       onclick="toggle_inventar();toggleClass($('inventar_header'),'nice_inner_blue_tab_js_hover','nice_inner_blue_tab')">
+    Character - HOTKEY "C"
+  </div>
+  <div id="inventar_table" style="<%= hidden ? "display:none;" : "" %>">
+    <% c = @current_char %>
+
+    <div class="inventar weapon_class" id="inventar_weapon_id"><%= render(:partial => 'inventar/weapon', :locals=>{:wtc=>c.char_to_active_weapon}) %></div>
+    <div class="inventar head_class" id="inventar_head_id"><%= render(:partial => 'inventar/head', :locals=>{:htc=>c.char_to_active_head}) %></div>
+    <div class="inventar body_class" id="inventar_body_id"><%= render(:partial => 'inventar/body', :locals=>{:btc=>c.char_to_active_body}) %></div>
+    <div class="inventar shield_class" id="inventar_shield_id"><%= render(:partial => 'inventar/shield', :locals=>{:stc=>c.char_to_active_shield}) %></div>
+
+    <%= drop_receiving_element('inventar_weapon_id', :accept=>"weapon", :hoverclass=>"inventar_hover", :url => {:controller=>:inventar, :action=>:use, :uid => params[:uid]}) %>
+    <%= drop_receiving_element('inventar_head_id', :accept=>"head", :hoverclass=>"inventar_hover", :url => {:controller=>:inventar, :action=>:use, :uid => params[:uid]}) %>
+    <%= drop_receiving_element('inventar_body_id', :accept=>"body", :hoverclass=>"inventar_hover", :url => {:controller=>:inventar, :action=>:use, :uid => params[:uid]}) %>
+    <%= drop_receiving_element('inventar_shield_id', :accept=>"shield", :hoverclass=>"inventar_hover", :url => {:controller=>:inventar, :action=>:use, :uid => params[:uid]}) %>
+
+    <div class="inventar_box" id="inventar_box">
+      <%= render(:partial => 'inventar/box') %>
+    </div>
+    <%= drop_receiving_element('inventar_box', :accept=>"active", :hoverclass=>"inventar_hover", :url => {:controller=>:inventar, :action=>:remove, :uid => params[:uid]}) %>
+
+  </div>
+</div>

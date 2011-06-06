@@ -1,0 +1,22 @@
+<%size = size || "small"%>
+<% xy = fix_char_positioning(size) %>
+<% @other_coordinates = @other_coordinates || [] %>
+<% @other_coordinates.each do |other| %>
+    <% oc = other.character %>
+    <% if oc  %>
+
+        <% if oc.quest_owner_id == 0 || oc.quest_owner_id == @current_char.id %>
+            <% ocbq_id = oc.belongs_to_quest && oc.belongs_to_quest.id || nil %>
+            <% if oc.active_quest_status == 0 || oc.active_quest_status <= Quest.status_for_user_char(@current_char.id, ocbq_id) %>
+                <% oc_style = "position:absolute;left:#{other.x - xy[0]}px;top:#{other.y - xy[1]}px;z-index:99;" %>
+                <div id="enemy_<%= other.character_id %>_map_div" class="enemy_char" style="<%=oc_style%>">
+
+                  <%=effect_box(oc)%>
+                  <% opts = {:id=>"enemy_#{oc.id}_map_pic"} %>
+                  <%= char_image_tag(oc, opts, size) %>
+
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>

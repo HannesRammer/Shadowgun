@@ -1,0 +1,9 @@
+<% if htc %>
+
+    <div class="active" id="inventar_head_<%= htc.id %>" style="height:100%;width:100%">
+      <%=item_image_tag(htc.armor)%>
+    </div>
+    <%= draggable_element("inventar_head_#{htc.id}", :revert=>true) %>
+<% else %>
+    kopf
+<% end %>

@@ -1,0 +1,10 @@
+<% a=remote_function(:url=>{:controller=> :fight, :action => :fight, :char_1=> @current_char.id },
+                     :before=>"set_weapon_counter(#{(@current_char.hit_time? * 1000)},'atk');",
+                     :submit=>"fake_form") %>
+
+
+<%= button_to_function("attack", a, :id=> "atk") %>
+
+
+
+

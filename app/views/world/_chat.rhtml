@@ -1,0 +1,8 @@
+<%= form_remote_tag(
+        :url => { :controller=>"world", :action => :send_chat_data },
+        :complete => "$('chat_input').value = ''" ) %>
+<%= text_field_tag( 'chat_input', '', { :size => 20, :id => 'chat_input'} ) %>
+<%= submit_tag "Add" %>
+</form>
+<div id="chat_data" style="list-style:none">
+</div>

@@ -1,0 +1,26 @@
+<h1>Listing items</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Description</th>
+    <th>Active</th>
+  </tr>
+
+<% for item in @items %>
+  <tr>
+    <td><%=h item.name %></td>
+    <td><%=h item.level %></td>
+    <td><%=h item.description %></td>
+    <td><%=h item.active %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New item', new_item_path %>

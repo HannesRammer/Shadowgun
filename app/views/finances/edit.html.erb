@@ -1,0 +1,28 @@
+<h1>Editing finance</h1>
+
+<% form_for(@finance) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :reason %><br />
+    <%= f.text_field :reason %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :how_much %><br />
+    <%= f.text_field :how_much %>
+  </p>
+  <p>
+    <%= f.label :spending_type %><br />
+    <%= f.text_field :spending_type %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @finance %> |
+<%= link_to 'Back', finances_path %>

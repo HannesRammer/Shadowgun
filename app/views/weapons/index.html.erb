@@ -1,0 +1,5 @@
+<% if params[:admin] %>
+    <%= render(:partial => 'weapons/admin_index', :locals=>{  :weapon => @weapons }) %>
+<% else %>
+    <%= render(:partial => 'weapons/user_index', :locals=>{  :wtcs => CharacterToWeapon.find(:all)}) %>
+<% end %>

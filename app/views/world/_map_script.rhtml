@@ -1,0 +1,37 @@
+<div id="map_script">
+  <input type="hidden" id="current_area" name="current_area" value="<%= @current_char.current_area %>">
+  <script>
+
+      function valid_path(nx, ny) {
+
+          var allowed = "false";
+          if (0 == 1) {
+          }
+                  <%@areas.each do |area|%>
+                      <%new_area = "#{area.field_type}#{"_#{area.id}" if area.field_type == "town" || area.field_type == "room" || area.field_type == "exit"}"%>
+                      <%="else if('#{area.field}' == $('field').value && #{area.x_min} < nx && nx < #{area.x_min + area.x_max} && #{area.y_min} < ny && ny < #{area.y_min + area.y_max} ){var area = '#{new_area}';}"%>
+                  <%end%>
+          else {
+              var area = "field";
+          }
+
+          if (area == "field") {
+              allowed = "true";
+          }
+          <%AreaMap.available_areas.each do |area|%>
+            <%#=new_area = "#{area.field_type}#{"_#{area.id}" if area.field_type == "town"}"%>
+          else if (area.split("_")[0] == "<%=area %>") {
+              allowed = "<%=AreaMap.allow_area_for(@current_char,area)%>";
+          }
+          <%end%>
+          if (allowed == "true") {
+              $('current_area').value = area;
+              return area;
+          } else {
+              $('moving').value = "false";
+              $('user_pic').src = "/images/character/hannes_stop_small.gif";
+              return false;
+          }
+      }
+  </script>
+</div>

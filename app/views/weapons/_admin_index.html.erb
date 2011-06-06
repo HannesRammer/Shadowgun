@@ -1,0 +1,33 @@
+<h1>Listing weapons</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Range</th>
+    <th>Damage</th>
+    <th>Level</th>
+    <th>Damage type</th>
+    <th>Hit time</th>
+    <th>worth</th>
+  </tr>
+
+  <% for weapon in @weapons %>
+      <tr>
+        <td><%= h weapon.name %></td>
+        <td><%= h weapon.range %></td>
+        <td><%= h weapon.damage %></td>
+        <td><%= h weapon.level %></td>
+        <td><%= h weapon.damage_type %></td>
+        <td><%= h weapon.hit_time %></td>
+        <td><%= h weapon.worth %></td>
+        <td><%= link_to 'Show', weapon %></td>
+        <td><%= link_to 'Edit', edit_weapon_path(weapon) %></td>
+        <td><%= link_to 'Destroy', weapon, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New weapon', new_weapon_path %>
+

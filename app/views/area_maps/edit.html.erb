@@ -1,0 +1,49 @@
+<h1>Editing area_map</h1>
+
+<% form_for(@area_map , :url=>{:controller=>:area_maps, :action=>:update, :id=>@area_map.id},:html =>{:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p><p>
+    <%= f.label :x_min %><br />
+    <%= f.text_field :x_min %>
+  </p>
+
+  <p>
+    <%= f.label :x_max %><br />
+    <%= f.text_field :x_max %>
+  </p>
+  <p>
+    <%= f.label :y_min %><br />
+    <%= f.text_field :y_min %>
+  </p>
+  <p>
+    <%= f.label :y_max %><br />
+    <%= f.text_field :y_max %>
+  </p>
+  <p>
+    <%= f.label :field %><br />
+    <%= f.text_field :field %>
+  </p>
+  <p>
+    <%= f.label :field_type %><br />
+    <%= f.text_field :field_type %>
+  </p>
+
+
+  Upload file: <%= f.file_field :image_file %>
+
+<%= image_tag("/area_maps/code_image/#{@area_map.id}", :alt => "Image") %>
+  <br />
+
+
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', :controller=>:area_maps,:action=>:show,:id=>@area_map.id %>
+<%= link_to 'Back', :controller=>:area_maps,:action=>:new_area_map%>

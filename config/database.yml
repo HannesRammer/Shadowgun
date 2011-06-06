@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  database: shadowgun
+  username: monstars99
+  password: enter1
+  host: localhost
+
+  #####railshoster.de
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: Shadowgun_test
+  pool: 5
+  username: Monstars99
+  password: enter666
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: db_60971479n5
+  username: user60971479n5
+  password: enter666
+  host:     zeta.railshoster.de

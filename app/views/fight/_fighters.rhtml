@@ -1,0 +1,13 @@
+<% @fighters.each do |oc| %>
+    <%= render :partial=>"characters/enemy_div", :locals=>{:oc=>oc} %>
+<% end %>
+<div id="me_div" class="me" >
+  <div id="char_<%= @current_char.id %>_status_div" class="me"></div>
+  <%= render :partial=>"characters/me_div" %>
+  <%= javascript_tag "set_distance_counter_for(#{@current_char.id},'atk')" if @attacked_char %>
+</div>
+
+
+<div id="current_place_param_name"><input type="hidden" id="current_page" name="current_page" value="fight">
+
+</div>

@@ -1,0 +1,20 @@
+<%#oc = oc.class== Character ? oc : @enemy %>
+
+<div id="enemy_<%= oc.id %>_div_outter" class="<%= "selected" if params[:attacked_char] %>" onmouseover="toggleClass($('enemy_<%=oc.id%>_map_pic'),'','nice_outer_blue_tab');" onmouseout="toggleClass($('enemy_<%=oc.id%>_map_pic'),'','nice_outer_blue_tab');">
+  <div id="enemy_<%= oc.id %>_div" class="enemy enemy_div" onclick="set_and_select_character(<%=oc.id%>);">
+    <div id="char_<%= oc.id %>_status_div"></div>
+    <div id="life_bar_<%= oc.id %>">
+      <%= render :partial => "characters/life_bar", :locals => {:char=> oc} %>
+    </div>
+    <div class="char">
+      <%= char_image_tag(oc) %>
+    </div>
+    <div class="<%= compare_level(@current_char.level, oc.level) %>"><%= oc.name %></div>
+    <%#=render :partial=>"characters/char_extras", :locals=>{:char => oc}%>
+
+
+    <div id="hit_<%= oc.id %>"></div>
+
+  </div>
+</div>
+

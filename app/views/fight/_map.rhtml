@@ -1,0 +1,43 @@
+<div id="arena">
+  <%= render :partial=>"fight/fighters" %>
+</div>
+<div id="fake_form"><input type="hidden" id="attacked_char" name="attacked_char" value=<%= @attacked_char.id %>></div>
+
+<% @fighters.each do |oc| %>
+    <div id="active_weapon_type_c<%=oc.id%>"><input type="hidden" id="aw_type_c<%=oc.id%>" name="aw_type_c<%=oc.id%>" value="<%=awtc_value(oc)%>"></div>
+    <% if oc.char_type == "enemy" %>
+        <script>
+            new PeriodicalExecuter(function() {
+                if (ok_to_fight_for(<%=oc.id%>)) {
+                    new Ajax.Request("/fight/fight?char_1=<%=oc.id%>&attacked_char=<%=@char.id%>", {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('fcdc66c78643c9aef5bea0cf075e79ee3c96cac9')});
+                }
+            }, "<%= oc.active_weapon ?  oc.active_weapon.hit_time - (oc.level/500) :  3 - (oc.level/500) %>");
+        </script>
+
+    <% end %>
+    <input type="hidden" id="allow_fight_for_<%=oc.id%>" value="" />
+    <input type="hidden" id="distance_to_<%=oc.id%>" value="<%= start_distance(oc, @char) %>" />
+    <input type="hidden" id="mps_<%=oc.id%>" value="<%=oc.moving_speed_while_fight_per_second%>" />
+    <input type="hidden" id="move_away_<%=oc.id%>"  />
+<% end %>
+
+<script>
+    new PeriodicalExecuter(function() {
+        var ac = $('attacked_char').value;
+
+        if (ok_to_fight_for(<%=@char.id%>)) {
+            set_weapon_counter("<%=@char.id%>","<%=@char.hit_time?%>", "atk");
+            new Ajax.Request("/fight/fight?char_1=<%=@char.id%>&attacked_char=" + ac, {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('fcdc66c78643c9aef5bea0cf075e79ee3c96cac9')});
+        }
+    }, "<%= @char.active_weapon ?  @char.active_weapon.hit_time - (@char.level/500) :  3 - (@char.level/500) %>");
+
+</script>
+  <input type="checkbox" id="pause_fight" name="pause_fight" value="" />pause fight<br />
+  <input type="checkbox" id="move_away_<%=@char.id%>" value="false" />move away<br />
+  <input type="hidden" id="allow_fight_for_<%=@char.id%>" value="" />
+  <input type="hidden" id="mps_<%=@char.id%>" value="<%=@char.moving_speed_while_fight_per_second%>" />
+
+
+
+
+

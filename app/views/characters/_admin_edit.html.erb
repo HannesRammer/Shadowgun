@@ -1,0 +1,102 @@
+<h1>Editing character</h1>
+
+<% form_for(@character) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :gender %><br/>
+      <%= f.text_field :gender %>
+    </p>
+
+    <p>
+      <%= f.label :max_ability_points %><br/>
+      <%= f.text_field :max_ability_points %>
+    </p>
+    <p>
+      <%= f.label :mind %><br/>
+      <%= f.text_field :mind %>
+    </p>
+    <p>
+      <%= f.label :agility %><br/>
+      <%= f.text_field :agility %>
+    </p>
+    <p>
+      <%= f.label :body %><br/>
+      <%= f.text_field :body %>
+    </p>
+    <p>
+      <%= f.label :charisma %><br/>
+      <%= f.text_field :charisma %>
+    </p>
+    <p>
+      <%= f.label :psychic %><br/>
+      <%= f.text_field :psychic %>
+    </p>
+    <p>
+      <%= f.label :current_life %><br/>
+      <%= f.text_field :current_life %>
+    </p>
+    <p>
+      <%= f.label :max_life %><br/>
+      <%= f.text_field :max_life %>
+    </p>
+    <p>
+      <%= f.label :current_mana %><br/>
+      <%= f.text_field :current_mana %>
+    </p>
+    <p>
+      <%= f.label :max_mana %><br/>
+      <%= f.text_field :max_mana %>
+    </p>
+    
+    <p>
+      <%= f.label :current_exp %><br/>
+      <%= f.text_field :current_exp %>
+    </p>
+    <p>
+      <%= f.label :next_lev_exp %><br/>
+      <%= f.text_field :next_lev_exp %>
+    </p>
+    <p>
+      <%= f.label :level %><br/>
+      <%= f.text_field :level %>
+    </p>
+    <p>
+      <%= f.label :chance_to_hit %><br/>
+      <%= f.text_field :chance_to_hit %>
+    </p>
+    <p>
+      <%= f.label :chance_of_max_damage %><br/>
+      <%= f.text_field :chance_of_max_damage %>
+    </p>
+    <p>
+      <%= f.label :chance_magic %><br/>
+      <%= f.text_field :chance_magic %>
+    </p>
+    <p>
+      <%= f.label :win %><br/>
+      <%= f.text_field :win %>
+    </p>
+    <p>
+      <%= f.label :lose %><br/>
+      <%= f.text_field :lose %>
+    </p>
+    <p>
+      <%= f.label :char_type %><br/>
+      <%= f.text_field :char_type %>
+    </p>
+    <p>
+      <%= f.label :gold%><br/>
+      <%= f.text_field :gold%>
+    </p>
+    <p>
+      <%= f.submit "Update" %>
+    </p>
+<% end %>
+
+<%= link_to 'Show', @character %> |
+<%= link_to 'Back', characters_path %>

@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mind: 1.5
+  body: 1.5
+  agility: 1.5
+  charisma: 1.5
+  psychic: 1.5
+  chance_to_hit: 1.5
+  chance_to_block: 1.5
+  chance_to_max_damage: 1.5
+  fire_damage: 1.5
+  chance_magic: 1.5
+  ice_damage: 1.5
+  fire_resist: 1.5
+  ice_resist: 1.5
+  drain_life: 1.5
+
+two:
+  mind: 1.5
+  body: 1.5
+  agility: 1.5
+  charisma: 1.5
+  psychic: 1.5
+  chance_to_hit: 1.5
+  chance_to_block: 1.5
+  chance_to_max_damage: 1.5
+  fire_damage: 1.5
+  chance_magic: 1.5
+  ice_damage: 1.5
+  fire_resist: 1.5
+  ice_resist: 1.5
+  drain_life: 1.5

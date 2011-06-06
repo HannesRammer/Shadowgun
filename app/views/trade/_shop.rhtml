@@ -1,0 +1,20 @@
+<div id="shop" >
+
+  <%=quest_links%>
+
+  <div class="trader_box" id="trader_box_1" style="position: relative; top: 215px; width: 186px; left: 111px;">
+    <%= render(:partial => 'trade/box', :locals=>{:character=>@char, :text=>"verkaufen"}) %>
+  </div>
+  <div id="fake_form"><input type="hidden" id="attacked_char" name="attacked_char" value=<%= @trader.id %>>
+  </div>
+
+
+  <div class="trader_box" id="trader_box_2" style="position: relative; top: 215px; width: 200px; left: 395px;">
+    <%= render(:partial => 'trade/box', :locals=>{:character=>@trader, :text=>"kaufen"}) %>
+  </div>
+  <%= drop_receiving_element('trader_box_1',  :accept=>"active", :hoverclass=>"inventar_hover", :url => {:controller=>:inventar, :action=>:remove, :uid => params[:uid]}) %>
+  <%= drop_receiving_element('trader_box_2',  :accept=>"active", :hoverclass=>"inventar_hover", :url => {:controller=>:inventar, :action=>:remove, :uid => params[:uid]}) %>
+
+  
+</div>
+

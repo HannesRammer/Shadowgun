@@ -1,0 +1,18 @@
+<%= "punkte übrig #{character.free_attribute_points}" %>
+<%= "level #{character.level}" %>
+<ul>
+  <% %w{mind agility body charisma psychic}.each do |attribute| %>
+      <li>
+
+      <%attribute_value = nil%>
+      <%eval "attribute_value = character.#{attribute}" %>
+
+        <%= link_to_remote("-", :url=>{:action=>:decrease_attribute, :attribute=>attribute, :char =>character}) if attribute_value.to_i > 1 %>
+        <%= attribute %>
+
+        <%= eval "character.#{attribute}" %>
+        <%= link_to_remote("+", :url=>{:action=>:increase_attribute, :attribute=>attribute, :char =>character}) if character.free_attribute_points > 0%>
+      </li>
+
+  <% end %>
+</ul>

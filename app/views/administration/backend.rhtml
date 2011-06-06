@@ -1,0 +1,17 @@
+
+<div id="backend">
+  <% if params[:display] ==  "add_item_to_character" %>
+      <%= render :partial => "administration/add_item_to_character", :locals=>{:character => @character} %>
+  <% end %>
+</div>
+
+
+<div id="backend">
+  <% if params[:display] ==  "add_enemy" %>
+      <%= render :partial => "administration/add_enemy", :locals=>{:character => @character} %>
+  <% end %>
+</div>
+
+<%= link_to("add items", :controller=>:administration, :action=>:backend, :display=>"add_item_to_character") %>
+<%= link_to("add enemy", :controller=>:administration, :action=>:backend, :display=>"add_enemy") %>
+<%= link_to("area_mapping", :controller=>:area_maps, :action=>:new_area_map) %>

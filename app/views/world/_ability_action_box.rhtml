@@ -1,0 +1,17 @@
+<div id="buff_div">
+
+  <% @current_char.active_ability_list.each do |a| %>
+
+    <% af=remote_function(:url=>{:controller=> :characters,
+                                :action => :buff,
+                                :char_1=> @current_char.id ,
+                                
+                                :buff_id=>a.id}  ,
+       :submit=>"current_place_param_name"
+       ) %>
+
+    <%#= item_image_tag(ai) %>
+    <%= link_to_function(action_item_image_tag(a.group,"buffs","png"), af, :id=> a.name,:class=>ability_level_color(a.level)) %>
+  <% end %>
+
+</div>

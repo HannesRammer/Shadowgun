@@ -1,0 +1,7 @@
+--
+cwd: /var/www/virtual/vu2049.delta.railshoster.de/rails/
+log_file: log/mongrel.log
+port: 14900
+pid_file: tmp/pids/mongrel.pid
+servers: 1
+environment: production

@@ -1,0 +1,41 @@
+<p>
+  <% @weapon = @weapon || weapon %>
+  <b>Name:</b>
+  <%= h @weapon.name %>
+</p>
+
+<p>
+  <b>Range:</b>
+  <%= h @weapon.range %>
+</p>
+
+<p>
+  <b>Damage:</b>
+  <%= h @weapon.damage %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= h @weapon.level %>
+</p>
+
+<p>
+  <b>Damage type:</b>
+  <%= h @weapon.damage_type %>
+</p>
+
+<p>
+  <b>Hit time:</b>
+  <%= h @weapon.hit_time %>
+</p>
+
+<p>
+  <b>worth:</b>
+  <%= h @weapon.worth%>
+</p>
+
+<%= link_to_remote('drop it', :url=>{:controller => :weapons, :action=>:drop, :uid => params[:uid], :weapon_id=>@weapon.id} ) %>
+<%= link_to_remote('pick up', :url=>{:controller => :weapons, :action=>:pick_up, :uid => params[:uid], :weapon_id=>@weapon.id} ) %>
+<%= link_to_remote('activate', :url=>{:controller => :weapons, :action=>:use, :uid => params[:uid], :weapon_id=>@weapon.id} ) %>
+<%= link_to_remote('deactivate', :url=>{:controller => :weapons, :action=>:unuse, :uid => params[:uid], :weapon_id=>@weapon.id} ) %>
+

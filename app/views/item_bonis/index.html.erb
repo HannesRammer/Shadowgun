@@ -1,0 +1,47 @@
+   <h1>Listing item_bonis</h1>
+    <table>
+      <tr>
+        <th>Mind</th>
+        <th>Body</th>
+        <th>Agility</th>
+        <th>Charisma</th>
+        <th>Psychic</th>
+        <th>Chance to hit</th>
+        <th>Chance to block</th>
+        <th>Chance to max damage</th>
+        <th>Fire damage</th>
+        <th>Chance magic</th>
+        <th>Ice damage</th>
+        <th>Fire resist</th>
+        <th>Ice resist</th>
+        <th>Drain life</th>
+        <th>Item Type</th>
+      </tr>
+
+      <% for item_boni in @item_bonis %>
+          <tr>
+            <td><%= h item_boni.mind %></td>
+            <td><%= h item_boni.body %></td>
+            <td><%= h item_boni.agility %></td>
+            <td><%= h item_boni.charisma %></td>
+            <td><%= h item_boni.psychic %></td>
+            <td><%= h item_boni.chance_to_hit %></td>
+            <td><%= h item_boni.chance_to_block %></td>
+            <td><%= h item_boni.chance_to_max_damage %></td>
+            <td><%= h item_boni.fire_damage %></td>
+            <td><%= h item_boni.chance_magic %></td>
+            <td><%= h item_boni.ice_damage %></td>
+            <td><%= h item_boni.fire_resist %></td>
+            <td><%= h item_boni.ice_resist %></td>
+            <td><%= h item_boni.drain_life %></td>
+            <td><%= h item_boni.owner_type %></td>
+            <td><%= link_to 'Show', item_boni %></td>
+            <td><%= link_to 'Edit', edit_item_boni_path(item_boni) %></td>
+            <td><%= link_to 'Destroy', item_boni, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+      <% end %>
+    </table>
+
+    <br/>
+
+    <%= link_to 'New item_boni', new_item_boni_path %>

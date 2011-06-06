@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  set_id: 1
+  text: MyText
+  dialog_type: MyString
+  next_set_id: 1
+
+two:
+  set_id: 1
+  text: MyText
+  dialog_type: MyString
+  next_set_id: 1

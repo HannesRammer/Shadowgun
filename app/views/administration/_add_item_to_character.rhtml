@@ -1,0 +1,27 @@
+<div>
+  <% @items.each do |item| %>
+
+      <%= form_remote_tag(:url => {:controller=> :administration,
+                                   :action => :add_item_to_character,
+                                   :id=>params[:char_id],
+                                   :item_id=> item.id,
+                                   :item_class=> item.class}) %>
+      <table>
+        <tr>
+          <td><%= submit_tag "schenke" %></td>
+          <td><%= item_image_tag(item) %></td>
+          <td>
+            <%= text_field_tag("numbers", 1) %>
+            mal an Character
+            <% @characters = Character.all.collect { |a| ["#{a.name} lvl:#{a.level} id:#{a.id}", a.id] } %>
+            <%= select_tag("char_id", options_for_select(@characters)) %>
+
+
+          </td>
+        </tr>
+      </table>
+
+
+      </form>
+  <% end %>
+</div>

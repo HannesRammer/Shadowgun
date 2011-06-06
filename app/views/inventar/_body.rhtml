@@ -1,0 +1,9 @@
+<% if btc %>
+
+    <div class="active" id="inventar_body_<%= btc.id %>" style="height:100%;width:100%">
+      <%=item_image_tag(btc.armor)%>
+    </div>
+    <%= draggable_element("inventar_body_#{btc.id}", :revert=>true) %>
+<% else %>
+    body
+<% end %>

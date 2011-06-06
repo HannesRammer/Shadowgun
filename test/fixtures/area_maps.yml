@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  x_min: 1
+  x_max: 1
+  y_min: 1
+  y_max: 1
+  field: MyString
+  field_type: MyString
+
+two:
+  x_min: 1
+  x_max: 1
+  y_min: 1
+  y_max: 1
+  field: MyString
+  field_type: MyString

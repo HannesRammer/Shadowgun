@@ -1,0 +1,21 @@
+<%= "Quests" %>
+
+<table>
+  <tr>
+    <th>Gold</th>
+    <th>Xp</th>
+    <th>Title</th>
+  </tr>
+  <% for quest in @quests %>
+    <tr>
+      <td><%=h quest.gold %></td>
+      <td><%=h quest.xp %></td>
+      <td><%=h quest.title %></td>
+      <td><%= link_to "Show", quest %></td>
+      <td><%= link_to "Edit", edit_quest_path(quest) %></td>
+      <td><%= link_to "Destroy", quest, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Quest", new_quest_path %></p>

@@ -1,0 +1,22 @@
+<%= render :partial=>"dragresize/dragresize_script_area_map", :locals=>{:field=>@field} %>
+
+<div style="position:fixed;top:0;:left:100px;">
+  <% Coordinates.fields.each do |field| %>
+        <%= link_to(field, :action=>"new_area_map", :field=>field) %>
+    <% end %>
+ 
+
+  <% AreaMap.available_areas.each do |area|%>
+  <%= area_map_create_button(area, @field) %>
+  <%end%>
+</div>
+<div id="area_maps">
+  <%= render :partial=>"area_maps/area_map" %>
+</div>
+
+
+
+
+
+
+

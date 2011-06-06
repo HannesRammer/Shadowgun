@@ -1,0 +1,32 @@
+<br/>
+<%= compass %>
+<div id="me_map_div" class="me">
+  <%= render :partial =>"characters/me_div" %>
+
+</div>
+<% do_once = true %>
+
+<% @other_coordinates.each do |other| %>
+    <% oc = other.character %>
+    <% if oc %>
+        <% if oc.quest_owner_id == 0 || oc.quest_owner_id == @current_char.id %>
+            <% if oc.active_quest_status == 0 || oc.active_quest_status <= Quest.status_for_user_char(@current_char.id, oc.belongs_to_quest.id) %>
+                <%= render :partial=>"characters/enemy_div", :locals=>{:oc=>oc} %>
+                <div class="char_buttons">
+                  <% if oc.char_type == "trader" %>
+                      <%=start_dialog_button(oc.id)%>
+                  <% elsif oc.char_type == "enemy" || oc.char_type == "user" %>
+                      <% if do_once && oc.char_type == "enemy" && (level_difference(@current_char.level, oc.level) < 5) && attack_range?(@current_char, oc) %>
+                          <%= javascript_tag remote_function(:before=>"$('ajax_move').value='false';",:url => { :controller=> :world, :action => :start_fight, :char_1=> oc.id, :attacked_char=> @current_char.id } ) %>
+                          <% do_once = false %>
+                      <% end %>
+                      <%=start_fight_button(@current_char.id,oc.id)%>
+
+                  <% end %>
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>
+
+

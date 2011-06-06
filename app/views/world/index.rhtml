@@ -1,0 +1,29 @@
+<%= javascript_include_tag "goto_xy_onclick" %>
+<%#= javascript_include_tag "virtual_image_choper" %>
+<div id="world_move_div">
+  <%= render :partial=> "world/map" %>
+  <%= render :partial=> "world/map_script" %>
+  <script>
+      <%if is_world?(@map)%>
+      new PeriodicalExecuter(function() {
+          if ($("ajax_move").value == "true") {
+              new Ajax.Request('/world/move?x=' + $("hidden_x").value + '&y=' + $("hidden_y").value + '', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('fcdc66c78643c9aef5bea0cf075e79ee3c96cac9')});
+          }
+          else {
+              false
+          }
+      }, ( <%=@current_char.attention%>));
+      <%end%>
+  </script>
+
+<%= render :partial=> "world/ability_action_box" %>
+  <input type="hidden" id="moving" value="false">
+
+</div>
+
+<%= render :partial=> "world/sound_file" %>
+
+
+
+
+

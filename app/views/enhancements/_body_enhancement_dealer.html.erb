@@ -1,0 +1,84 @@
+<div id="body_enhancement_dealer" style="position: absolute; right: 300px;">
+  <div style="position:fixed;top:10px;left:350px;z-index:5;">
+    <%= link_to_remote("metal", :url=>{:action=>"body", :level=>1} ) %>
+    <%= link_to_remote("Plasteel", :url=>{:action=>"body", :level=>2} ) %>
+    <%= link_to_remote("neurocybernetic", :url=>{:action=>"body", :level=>3} ) %>
+    <% @body_enhancements.each_with_index do |be, i| %>
+        <%= image_tag(i == 0 ? be : be.pic("female"), :style=>"position:fixed;top:100px;left:0;") %>
+    <% end %>
+  </div>
+  <% @body_enhancements.each_with_index do |be, i| %>
+      <div style="position:relative;left:150px;">
+        <table style="border:1px solid #ffffff;">
+          <tr>
+            <th>
+            </th>
+            <th>
+              <%= "name" %>
+            </th>
+            <th>
+              <%= "description" %>
+            </th>
+            <th>
+              <%= "multi" %>
+            </th>
+            <th>
+              <%= "level" %>
+            </th>
+            <th>
+              <%= "version" %>
+            </th>
+            <th>
+              <%= "worth" %>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <%= image_tag("enhancements/body/female_unmod.png", :style=>"position:absolute;") %>
+              <%= image_tag(i == 0 ? be : be.pic("female"), :style=>"position:relative;z-index:1;") %>
+            </td>
+            <td>
+              <%= "#{i == 0 ? "human body" : be.name}" %>
+            </td>
+            <td>
+              <%= "#{i == 0 ? "only flesh" : be.description}" %>
+            </td>
+            <td>
+              <%= "#{i == 0 ? "some up to 1.00023" : be.multi}" %>
+            </td>
+            <td>
+              <%= "#{i == 0 ? "0" : be.level}" %>
+            </td>
+            <td>
+              <%= "#{i == 0 ? "0" : be.version}" %>
+            </td>
+            <td>
+              <% if i > 0 %>
+                  <%this_enhancement = @current_char.enhancment(be.name)%>
+                  <% if @current_char.has_enhancement?(be.id) %>
+                      you've got it in you
+                  <% elsif this_enhancement && this_enhancement.version > be.version %>
+                      you've got it better ;)
+                  <% else %>
+                      <%= be.worth %>
+
+
+                      <%= form_remote_tag(:url => { :controller=> :enhancements,
+                                                    :action => :enhance,
+                                                    :user_char=> @current_char.id,
+                                                    :pc_char=> @enhancer.id,
+                                                    :body_part_id=> be.id
+                      } ) %>
+                      <%= submit_tag "for you #{be.buy_price_for(@current_char)}" %>
+                      </form>
+                  <% end %>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+        <br/>
+        <br/>
+      </div>
+  <% end %>
+
+</div>

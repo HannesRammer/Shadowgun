@@ -1,0 +1,25 @@
+<% if @town_room_id %>
+
+    <div id="map" style="background: transparent url(/area_maps/code_image/<%=@town_room_id %>) no-repeat scroll left bottom;">
+      <div id="me">
+        <%= render :partial=> "world/visit" %>
+<% else %>
+    <div id="map" style="background: transparent url(/images/world/<%map_name = field_name(@map)%><%=map_name%>.jpg) no-repeat scroll left bottom;">
+      <div id="me">
+        <%= render :partial=> "world/move" %>
+<% end %>
+
+    <div id="current_place_param_name"><input type="hidden" id="current_page" name="current_page" value="world"></div>
+
+<div id="hidden_xy">
+  <input type="hidden" id="hidden_x" value="<%= @x %>">
+  <input type="hidden" id="hidden_y" value="<%= @y %>">
+  <input type="hidden" id="field" value="<%= @map %>">
+  <input type="hidden" id="town" value="<%= @town %>">
+  <input type="hidden" id="room" value="<%= @room %>">
+</div>
+</div>
+<%= javascript_tag "initCrop('world')" %>
+<div style="width:30px;background-color:#ffffff;color:#000000;"><%= map_name %></div>
+
+</div>

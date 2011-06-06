@@ -1,0 +1,30 @@
+<h1>Listing area_maps</h1>
+
+<table>
+  <tr>
+    <th>X min</th>
+    <th>X max</th>
+    <th>Y min</th>
+    <th>Y max</th>
+    <th>Field</th>
+    <th>Field type</th>
+  </tr>
+
+<% @area_maps.each do |area_map| %>
+  <tr>
+    <td><%=h area_map.x_min %></td>
+    <td><%=h area_map.x_max %></td>
+    <td><%=h area_map.y_min %></td>
+    <td><%=h area_map.y_max %></td>
+    <td><%=h area_map.field %></td>
+    <td><%=h area_map.field_type %></td>
+    <td><%= link_to 'Show', :controller=>:area_maps,:action=>:show,:id=>area_map.id %></td>
+    <td><%= link_to 'Edit', :controller=>:area_maps,:action=>:edit,:id=>area_map.id %></td>
+    <td><%= link_to 'Destroy', area_map, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New area_map', new_area_map_path %>

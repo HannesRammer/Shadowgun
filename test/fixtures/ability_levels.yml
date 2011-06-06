@@ -1,0 +1,19 @@
+one:
+  name: MyString
+  usage_type: MyString
+  level: 1
+  time_cost: 1
+  mana_cost: 1
+  factor: 1.5
+  duration: 1
+  active_if: MyString
+
+two:
+  name: MyString
+  usage_type: MyString
+  level: 1
+  time_cost: 1
+  mana_cost: 1
+  factor: 1.5
+  duration: 1
+  active_if: MyString

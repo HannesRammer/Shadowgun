@@ -1,0 +1,24 @@
+<h1>Listing pc_char_dialog_set_to_user_chars</h1>
+
+<table>
+  <tr>
+    <th>Set</th>
+    <th>Pc char</th>
+    <th>User char</th>
+  </tr>
+
+<% @pc_char_dialog_set_to_user_chars.each do |pc_char_dialog_set_to_user_char| %>
+  <tr>
+    <td><%=h pc_char_dialog_set_to_user_char.set_id %></td>
+    <td><%=h pc_char_dialog_set_to_user_char.pc_char %></td>
+    <td><%=h pc_char_dialog_set_to_user_char.user_char %></td>
+    <td><%= link_to 'Show', pc_char_dialog_set_to_user_char %></td>
+    <td><%= link_to 'Edit', edit_pc_char_dialog_set_to_user_char_path(pc_char_dialog_set_to_user_char) %></td>
+    <td><%= link_to 'Destroy', pc_char_dialog_set_to_user_char, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pc_char_dialog_set_to_user_char', new_pc_char_dialog_set_to_user_char_path %>

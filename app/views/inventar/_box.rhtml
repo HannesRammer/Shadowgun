@@ -1,0 +1,30 @@
+<% character ||= @current_char %>
+<% character.inventar.each do |itc, count| %>
+    <% if itc.class == CharacterToWeapon %>
+        <% item = itc.weapon %>
+        <% item_css_id = "#{item.name}_weapon_#{itc.id}" %>
+        <div class="<%= "item #{item.class.to_s.downcase}" %>" id="<%= "#{item_css_id}" %>">
+          <%= item_image_tag(item) %>
+          <div class="number">
+            <%= count %>
+          </div>
+        </div>
+        <%= draggable_element("#{item.name}_weapon_#{itc.id}", :revert=>true) %>
+    <% end %>
+    <% if itc.class == CharacterToArmor %>
+        <% item = itc.armor %>
+        <% item_css_id = "#{item.name}_#{item.armor_type}_#{itc.id}" %>
+        <div class="<%= "item #{ item.armor_type}" %>" id="<%= "#{item_css_id}" %>">
+          <%= item_image_tag(item) %>
+          <div class="number">
+            <%= count %>
+          </div>
+        </div>
+        <%= draggable_element("#{item.name}_#{item.armor_type}_#{itc.id}", :revert=>true) %>
+    <% end %>
+    <% if itc.class == CharacterToItem %>
+        <% item = itc.item %>
+        <%= item_div_tag(item, count) %>
+        <%= draggable_element("#{item.name.gsub(' ','_')}_item_#{itc.id}", :revert=>true) %>
+    <% end %>
+<% end %>

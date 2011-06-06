@@ -1,0 +1,20 @@
+<%= "Quest" %>
+
+<p>
+  <strong>Gold:</strong>
+  <%=h @quest.gold %>
+</p>
+<p>
+  <strong>Xp:</strong>
+  <%=h @quest.xp %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%=h @quest.title %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_quest_path(@quest) %> |
+  <%= link_to "Destroy", @quest, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", quests_path %>
+</p>

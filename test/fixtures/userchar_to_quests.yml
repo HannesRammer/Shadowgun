@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  char_id: 1
+  quest_id: 1
+  quest_status: 1
+
+two:
+  char_id: 1
+  quest_id: 1
+  quest_status: 1

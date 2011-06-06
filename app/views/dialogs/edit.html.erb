@@ -1,0 +1,28 @@
+<h1>Editing dialog</h1>
+
+<% form_for(@dialog) do |f| %>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :set_id %><br />
+    <%= f.text_field :set_id %>
+  </p>
+  <p>
+    <%= f.label :text %><br />
+    <%= f.text_area :text %>
+  </p>
+  <p>
+    <%= f.label :dialog_type %><br />
+    <%= f.text_field :dialog_type %>
+  </p>
+  <p>
+    <%= f.label :next_set_id %><br />
+    <%= f.text_field :next_set_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @dialog %> |
+<%= link_to 'Back', dialogs_path %>

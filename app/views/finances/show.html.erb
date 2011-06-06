@@ -1,0 +1,23 @@
+<p>
+  <b>Reason:</b>
+  <%=h @finance.reason %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @finance.name %>
+</p>
+
+<p>
+  <b>How much:</b>
+  <%=h @finance.how_much %>
+</p>
+
+<p>
+  <b>Spending type:</b>
+  <%=h @finance.spending_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_finance_path(@finance) %> |
+<%= link_to 'Back', finances_path %>

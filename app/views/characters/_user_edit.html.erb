@@ -1,0 +1,29 @@
+<div id="char_edit_main">
+
+
+  <div id="char_edit_left">
+    <h1>HOME</h1>
+
+    <div id="details">
+      <%= render(:partial => 'characters/details', :locals=>{:character => @character}) %>
+    </div>
+  </div>
+  <div id="char_edit_right">
+    <div id="attributes">
+      <%= render(:partial => 'characters/attributes', :locals=>{:character => @character}) %>
+    </div>
+
+    <div id="results">
+      <%= render(:partial => 'characters/results', :locals=>{:character => @character}) %>
+    </div>
+    <%= render :partial=> "world/ability_action_box" %>
+  </div>
+
+  <div id="weapons">
+    <%#= render(:partial => 'weapons/user_index', :locals=>{  :wtcs => @character.character_to_weapon}) if !@character.character_to_weapon.blank? %>
+  </div>
+   <div id="current_place_param_name"><input type="hidden" id="current_page" name="current_page" value="character"></div>
+</div>
+
+
+

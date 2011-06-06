@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  database: shadowgun
+  username: monstars99
+  password: enter1
+  host: localhost
+
+production:
+  adapter: mysql
+  encoding: utf8
+  host: db.freerails.de
+  database: m99
+  username: m99
+  password: enter1

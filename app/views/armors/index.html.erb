@@ -1,0 +1,27 @@
+<h1>Listing armors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Armor</th>
+    <th>Armor type</th>
+    <th>worth</th>
+
+  </tr>
+
+<% for armor in @armors %>
+  <tr>
+    <td><%=h armor.name %></td>
+    <td><%=h armor.armor %></td>
+    <td><%=h armor.armor_type %></td>
+    <td><%=h armor.worth %></td>
+    <td><%= link_to 'Show', armor %></td>
+    <td><%= link_to 'Edit', edit_armor_path(armor) %></td>
+    <td><%= link_to 'Destroy', armor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New armor', new_armor_path %>

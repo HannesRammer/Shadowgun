@@ -1,0 +1,29 @@
+<h1>Listing finances</h1>
+
+<table>
+  <tr>
+    <th>Reason</th>
+    <th>Name</th>
+    <th>How much</th>
+    <th>Spending type</th>
+  </tr>
+
+<% @finances.each do |finance| %>
+  <tr>
+    <td><%=h finance.reason %></td>
+    <td><%=h finance.name %></td>
+    <td><%=h finance.how_much %></td>
+    <td><%=h finance.spending_type %></td>
+    <td><%= link_to 'Show', finance %></td>
+    <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
+    <td><%= link_to 'Destroy', finance, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New finance', new_finance_path %>
+
+<br/>
+summe : <%= @current_state %>

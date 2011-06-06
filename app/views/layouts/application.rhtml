@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <title>Characters: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+
+<%#= stylesheet_link_tag "dev/screen", :media => "all" %>
+
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag :juggernaut %>
+<%= javascript_include_tag "cookies.js" %>
+<%= javascript_include_tag "fight.js" %>
+<%= javascript_include_tag "game_effects.js" %>
+<%= javascript_include_tag "css3_animation_functions.js" %>
+<%#= javascript_include_tag "right_click.js" %>
+<%#= juggernaut(:channel_id =>1)  %>
+<% channel = ['world'] %>
+<% channel << "#{@current_account.id}" if @current_account %>
+<%= juggernaut(:channels => channel) %>
+<%= javascript_include_tag "clock.js" %>
+<%= javascript_include_tag "counter.js" %>
+<%#= javascript_include_tag "dropevents.js" %>
+<%#= javascript_include_tag "functions.js" %>
+<%= stylesheet_link_tag "virtual_image_choper" %>
+<%= stylesheet_link_tag "map" %>
+<%= stylesheet_link_tag "css3" %>
+<%= javascript_include_tag "keystroke.js" %>
+
+
+
+<body onload="UR_Start();toggle_css3_animations();">
+<div id="container">
+
+
+  <%#= render(:partial => 'shared/header', :locals => {:cont_name => 'contact'}) %>
+
+  <div id="message"></div>
+  <div class="content">
+    <div class="float_box" onmouseup="save_style_in_cookie_for('inventar')">
+      <%if @current_char%>
+      <div id="active_weapon_type_c<%=@current_char.id%>"><input type="hidden" id="aw_type_c<%=@current_char.id%>" name="aw_type_c<%=@current_char.id%>" value=<%= awtc_value(@current_char)%>></div>
+          <%end%>
+    <%= render(:partial => 'inventar/main') if @current_char %>
+      <%= draggable_element("inventar", :revert=>false) %>
+    </div>
+    <div class="float_box" onmouseup="save_style_in_cookie_for('quests')">
+      <%= render(:partial => 'quests/quests') if @current_char %>
+      <%= draggable_element("quests", :revert=>false) %>
+    </div>
+    <div class="float_box" onmouseup="save_style_in_cookie_for('enhancements')">
+      <%= render(:partial => 'enhancements/body_parts') if @current_char %>
+      <%= draggable_element("enhancements", :revert=>false) %>
+    </div>
+    <div class="relative_content">
+      <%= yield :layout %>
+
+
+      <%if @current_char%>
+      <div id="main_navi">
+
+        <div id="ur" class="shadow_only_text_white"></div>
+
+        <div id="chat">
+          <%= render :partial=> "world/chat" %>
+        </div>
+        <%= link_to("character", edit_character_path(@current_char)) if @current_char %>
+        <%= link_to("map", :controller=>:world, :action=>:index) %>
+
+        <div id="notice"><%= flash[:notice] %></div>
+
+        <div id="navi">
+          <%= render :partial=>"right_navi" if params[:controller] == "world" %>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <%= "<div onclick='toggle_quests();' id='magical_fire' class='fire'>(Q)uests</div>" %>
+        <div onclick="toggle_inventar();" id='magical_shadow' class='rgb_shadow'>(C)Inventar</div>
+        <%= "<div onclick='toggle_enhancements();' >(E)nhancements</div>" if  !@current_char.body_parts.blank? %>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <%#= render(:partial => 'shared/footer') %>
+
+  <input type="hidden" name="uid" value="<%= @uid %>">
+  <input type="hidden" id="ajax_move" value="true">
+  <input type="hidden" id="ajax_fight" value="true">
+  <div id="music"></div>
+</div>
+
+</body>
+</html>

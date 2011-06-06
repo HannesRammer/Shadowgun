@@ -1,0 +1,13 @@
+<% size = size || "small" %>
+
+<% xy = fix_char_positioning(size) %>
+
+
+
+<% my_style = "position:absolute;left:#{@x - xy[0]}px;top:#{@y - xy[1]}px;z-index:99;" %>
+<div id="me_map_div" class="me" style="<%= my_style %>">
+  <%= effect_box(@current_char) %>
+  <% opts={:id=>"user_pic"} %>
+  <%= char_image_tag(@current_char, opts, size) %>
+  <%#= image_tag("character/charger.gif", opts) %>
+</div>

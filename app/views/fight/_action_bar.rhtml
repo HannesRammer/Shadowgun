@@ -1,0 +1,22 @@
+<div id="atk_div">
+
+  <%=flex_button("fight/buttons","atk",@char)%>
+  <% @current_char.active_items.uniq.each do |ai| %>
+
+    <% aif=remote_function(:url=>{:controller=> :fight,
+                                :action => :fight,
+                                :char_1=> @current_char.id ,
+                                :item_id=>ai.id},
+                         :submit=>"fake_form") %>
+
+    <%#= item_image_tag(ai) %>
+    <%= link_to_function(action_item_image_tag(ai.name), aif, :id=> ai.name) %>
+  <% end %>
+  
+  <div class="shadow_only_text_white" id="time_counter" style="width:300px;"></div>
+  <div class="shadow_only_text_white" id="distance_time_counter" style="width:300px;"></div>
+  <div class="shadow_only_text_white" id="distance_counter" style="width:300px;"></div>
+  <ul id="fight_data" style="list-style:none">
+  </ul>
+  
+</div>

@@ -1,0 +1,18 @@
+<div id="talk_map_div" class="me" style="position:fixed;top:50px;left:50px;">
+  <% opts={:id=>"trade_pic",:style=>"position:absolute;top:250px;left:300px;"} %>
+  <div id="bubble_box1" style="position:absolute;width:400px;height:250px;z-index:2;">
+    <%= image_tag("icons/bubble2.png", :style=>"position:absolute;width:100%;height:100%;z-index:2;") %>
+    <div id="bubble1" style="position:absolute;top:45px;z-index:2;width:300px;left:70px;"></div>
+    <%= char_image_tag(@pc, opts, size = "") %>
+  </div>
+
+</div>
+<div id="me_talk_map_div" class="me" style="position:fixed;top:50px;left:450px;">
+  <% opts={:id=>"user_pic",:style=>"position:absolute;top:250px;left:30px;"} %>
+  <div id="bubble_box2" style="position:absolute;width:400px;height:250px;z-index:2;">
+    <%= image_tag("icons/bubble1.png", :style=>"position:absolute;width:100%;height:100%;z-index:2;") %>
+    <div id="bubble2" style="position:absolute;top:55px;left:85px;width:200px;z-index:2;"></div>
+    <%= char_image_tag(@current_char, opts, "") %>
+  </div>
+</div>
+

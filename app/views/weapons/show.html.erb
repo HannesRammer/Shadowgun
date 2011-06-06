@@ -1,0 +1,5 @@
+<% if params[:admin] %>
+    <%= render(:partial => 'weapons/admin_show', :locals=>{  :weapon => @weapon }) %>
+<% else %>
+    <%= render(:partial => 'weapons/user_show', :locals=>{  :weapon => @weapon}) %>
+<% end %>

@@ -1,0 +1,38 @@
+<p>
+  <b>X min:</b>
+  <%=h @area_map.x_min %>
+</p>
+
+<p>
+  <b>X max:</b>
+  <%=h @area_map.x_max %>
+</p>
+
+<p>
+  <b>Y min:</b>
+  <%=h @area_map.y_min %>
+</p>
+
+<p>
+  <b>Y max:</b>
+  <%=h @area_map.y_max %>
+</p>
+
+<p>
+  <b>Field:</b>
+  <%=h @area_map.field %>
+</p>
+
+<p>
+  <b>Field type:</b>
+  <%=h @area_map.field_type %>
+</p>
+
+<%= image_tag("/area_maps/code_image/#{@area_map.id}", :alt => "Image") %>
+
+
+
+
+
+    <%= link_to 'Edit', :controller=>:area_maps,:action=>:edit,:id=>@area_map.id %> |
+<%= link_to 'Back', :controller=>:area_maps,:action=>:new_area_map%> 

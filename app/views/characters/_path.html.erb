@@ -1,0 +1,16 @@
+       <%paths ||=[]%>                     
+Pfad <%= collection_select(:path,
+                            :path_id,
+                            paths,
+                            :id,
+                            :name,
+                            {:prompt => true ,
+                             :selected=>@current_char.path_id},
+                            {:onchange => remote_function( :url =>  { :action => :find_vocation },
+                                                           :with => "'path_id=' +  escape(value)" )}) %>   <br/>
+  current <%=@current_char.path_name%>
+
+
+ <div id="vocation">
+<%=render :partial=>"characters/vocation", :locals=>{:vocations=>paths.first && paths.first.vocations || []}%>
+     </div>

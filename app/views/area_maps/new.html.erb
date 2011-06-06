@@ -1,0 +1,35 @@
+<h1>New area_map</h1>
+
+<% form_for(@area_map) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :x_min %><br />
+    <%= f.text_field :x_min %>
+  </p>
+  <p>
+    <%= f.label :x_max %><br />
+    <%= f.text_field :x_max %>
+  </p>
+  <p>
+    <%= f.label :y_min %><br />
+    <%= f.text_field :y_min %>
+  </p>
+  <p>
+    <%= f.label :y_max %><br />
+    <%= f.text_field :y_max %>
+  </p>
+  <p>
+    <%= f.label :field %><br />
+    <%= f.text_field :field %>
+  </p>
+  <p>
+    <%= f.label :field_type %><br />
+    <%= f.text_field :field_type %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', area_maps_path %>

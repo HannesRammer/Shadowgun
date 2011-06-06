@@ -1,0 +1,26 @@
+<h1>Listing dialogs</h1>
+
+<table>
+  <tr>
+    <th>Set</th>
+    <th>Text</th>
+    <th>Dialog type</th>
+    <th>Next set</th>
+  </tr>
+
+<% @dialogs.each do |dialog| %>
+  <tr>
+    <td><%=h dialog.set_id %></td>
+    <td><%=h dialog.text %></td>
+    <td><%=h dialog.dialog_type %></td>
+    <td><%=h dialog.next_set_id %></td>
+    <td><%= link_to 'Show', dialog %></td>
+    <td><%= link_to 'Edit', edit_dialog_path(dialog) %></td>
+    <td><%= link_to 'Destroy', dialog, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dialog', new_dialog_path %>

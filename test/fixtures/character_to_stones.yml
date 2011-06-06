@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  character_id: 1
+  stone_id: 1
+  active: false
+  power: 1
+
+two:
+  character_id: 1
+  stone_id: 1
+  active: false
+  power: 1

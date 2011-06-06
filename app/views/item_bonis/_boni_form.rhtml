@@ -1,0 +1,76 @@
+<% fields_for :item_boni do |boni| %>
+    BONIS   
+    <div>
+         <p>
+            <%= boni.label :mind %><br/>
+            <%= boni.text_field :mind %>
+          </p>
+
+          <p>
+            <%= boni.label :body %><br/>
+            <%= boni.text_field :body %>
+          </p>
+
+          <p>
+            <%= boni.label :agility %><br/>
+            <%= boni.text_field :agility %>
+          </p>
+
+          <p>
+            <%= boni.label :charisma %><br/>
+            <%= boni.text_field :charisma %>
+          </p>
+
+          <p>
+            <%= boni.label :psychic %><br/>
+            <%= boni.text_field :psychic %>
+          </p>
+
+          <p>
+            <%= boni.label :chance_to_hit %><br/>
+            <%= boni.text_field :chance_to_hit %>
+          </p>
+
+          <p>
+            <%= boni.label :chance_to_block %><br/>
+            <%= boni.text_field :chance_to_block %>
+          </p>
+
+          <p>
+            <%= boni.label :chance_to_max_damage %><br/>
+            <%= boni.text_field :chance_to_max_damage %>
+          </p>
+
+          <p>
+            <%= boni.label :fire_damage %><br/>
+            <%= boni.text_field :fire_damage %>
+          </p>
+
+          <p>
+            <%= boni.label :chance_magic %><br/>
+            <%= boni.text_field :chance_magic %>
+          </p>
+
+          <p>
+            <%= boni.label :ice_damage %><br/>
+            <%= boni.text_field :ice_damage %>
+          </p>
+
+          <p>
+            <%= boni.label :fire_resist %><br/>
+            <%= boni.text_field :fire_resist %>
+          </p>
+
+          <p>
+            <%= boni.label :ice_resist %><br/>
+            <%= boni.text_field :ice_resist %>
+          </p>
+
+          <p>
+            <%= boni.label :drain_life %><br/>
+            <%= boni.text_field :drain_life %>
+          </p>
+ 
+        </div>
+
+<% end %>

@@ -1,0 +1,39 @@
+<%= "Gold #{f2(character.gold)}" %>
+<% character.inventar.each do |item, count| %>
+    <% item_id = item.id %>
+
+    <% if item.class == CharacterToWeapon %>
+        <% item = item.weapon %>
+        <% css_class= "#{item.class.to_s.downcase}" %>
+        <% css_id="#{item.name}_weapon_#{item_id}_trade" %>
+    <% elsif item.class == CharacterToArmor %>
+        <% item = item.armor %>
+        <% css_class= "#{ item.armor_type}" %>
+        <% css_id="#{item.name}_#{item.armor_type}_#{item_id}_trade" %>
+
+    <% elsif item.class == CharacterToItem %>
+        <% item = item.item %>
+        <% css_class= "#{item.class.to_s.downcase}" %>
+        <% css_id="#{item.name}_item_#{item_id}_trade" %>
+
+    <% end %>
+
+    <% buy = text == "kaufen" %>
+    <% gold = buy ? item.buy_price_for(@char) : item.sell_price_for(@char) %>
+      <div>
+      <div class="item <%= css_class %>" id="<%= css_id %>">
+        <%= item_image_tag(item) %>
+        <div class="number">
+          <%= count %>
+        </div>
+
+      <%= form_remote_tag(:url => { :controller=> :trade,
+                                    :action => :trade,
+                                    :buyer=> buy ? @char.id : @trader.id,
+                                    :seller=> buy ? @trader.id : @char.id,
+                                    :item=> css_id,
+                                    :item_id=> item.id} ) %>
+      <%= submit_tag "#{text} #{f2(gold)}" %>
+      </form>
+    </div>    </div>
+<% end %>

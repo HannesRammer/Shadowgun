@@ -1,0 +1,18 @@
+<%race =  Race.all %>
+
+Rasse <%= collection_select(:race,
+                            :race_id,
+                            race,
+                            :id,
+                            :name,
+                            {:prompt => true,
+                             :selected => @current_char.race_id},
+                            {:onchange => remote_function( :url =>  { :action => :find_path },
+                                                           :with => "'race_id=' +  escape(value)" )}) %>   <br/>
+  current <%=@current_char.race_name%>
+
+<div id="path">
+<%=render :partial=>"characters/path", :locals=>{:paths=>@current_char.race && @current_char.race.paths}%>
+    </div>
+
+

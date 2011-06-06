@@ -1,0 +1,22 @@
+<p>
+  <b>Name:</b>
+  <%=h @armor.name %>
+</p>
+
+<p>
+  <b>Armor:</b>
+  <%=h @armor.armor %>
+</p>
+
+<p>
+  <b>Armor type:</b>
+  <%=h @armor.armor_type %>
+</p>
+<p>
+  <b>worth:</b>
+  <%=h @armor.worth%>
+</p>
+
+
+<%= link_to 'Edit', edit_armor_path(@armor) %> |
+<%= link_to 'Back', armors_path %>

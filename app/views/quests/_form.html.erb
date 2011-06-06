@@ -1,0 +1,16 @@
+<% form_for @quest do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :gold %><br />
+    <%= f.text_field :gold %>
+  </p>
+  <p>
+    <%= f.label :xp %><br />
+    <%= f.text_field :xp %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

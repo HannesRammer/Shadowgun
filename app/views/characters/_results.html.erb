@@ -1,0 +1,35 @@
+<ul id="main_results">
+  <li><%= "schaden  #{character.damage} " %></li>
+  <li><%= "trefferquote #{character.cth} %" %></li>
+  <li><%= "chance auf max schaden #{character.cmd} %" %></li>
+  <li><%= "buy items at #{character.buy_ratio_percent} %" %></li>
+  <li><%= "sell items at #{character.sell_ratio_percent} %" %></li>
+  <li><%= "regenerate life per second #{character.regenerate_life_per_second} punkte" %></li>
+  <li><%= "armor #{character.armor} punkte" %></li>
+  <li><%= "moving speed while in fight #{character.moving_speed_while_fight_per_second} m/s" %></li>
+  <li><%= "moving speed while in fight #{character.moving_speed_while_fight_per_meter} s/m" %></li>
+</ul>
+<%#
+   @text="<ul id='rest'>"
+   %w{chance_of_max_damage
+      max_life
+      max_ability_points
+      max_mana
+      current_life
+      chance_magic
+      armor
+      lose
+      next_lev_exp
+      level
+      current_exp
+      win
+      current_mana
+      chance_to_hit}.each do |c|
+       @text << "<li>#{c} #{eval "character.#{c}"} </li>"
+   end
+   @text << "</ul>"
+
+%>
+
+<%#= @text %>
+

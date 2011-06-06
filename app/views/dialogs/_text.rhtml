@@ -1,0 +1,11 @@
+<div class="<%= !dialogs.blank? ? "message" : "" %>">
+  <ul>
+    <li class="msg_actions"><%= link_to_remote( "handel mit #{@pc.name}",
+                                                :url => { :controller=> :trade,
+                                                          :action => :start_trade,
+                                                          :char_1=> @current_char.id,
+                                                          :attacked_char=> @pc.id } ) %> </li>
+    <%=generate_dialogs(dialogs,@pc, @current_char)%>
+
+  </ul>
+</div>

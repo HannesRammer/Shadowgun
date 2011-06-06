@@ -1,0 +1,16 @@
+<% remote_form_for :character, :url=>{:action => :generate, :finish => "step1"}, :html => { :id => 'details_done' } do |form| %>
+     <table style="padding-left:12px;">
+      <tr><td>hier charakter erstellen</td></tr>
+      
+       <tr><td>Name<%= form.text_field :name, :maxlength => 20 %></td></tr>
+       <tr><td><div id="race"><%=render :partial=>"characters/race"%></div></td></tr>
+
+
+       <tr><td><br/><br/><%= submit_tag "speichern" %></td></tr>
+     </table>
+
+<% end %>
+<div id="abilities">
+  <%=render :partial=>"characters/ability"%>
+</div>
+

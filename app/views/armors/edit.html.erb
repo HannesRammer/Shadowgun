@@ -1,0 +1,28 @@
+<h1>Editing armor</h1>
+
+<% form_for(@armor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :armor %><br />
+    <%= f.text_field :armor %>
+  </p>
+  <p>
+    <%= f.label :armor_type %><br />
+    <%= f.text_field :armor_type %>
+  </p>
+     <p>
+    <%= f.label :worth%><br />
+    <%= f.text_field :worth%>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @armor %> |
+<%= link_to 'Back', armors_path %>

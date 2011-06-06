@@ -1,0 +1,72 @@
+<h1>Editing item_boni</h1>
+
+<% form_for(@item_boni) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :mind %><br />
+    <%= f.text_field :mind %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.label :agility %><br />
+    <%= f.text_field :agility %>
+  </p>
+  <p>
+    <%= f.label :charisma %><br />
+    <%= f.text_field :charisma %>
+  </p>
+  <p>
+    <%= f.label :psychic %><br />
+    <%= f.text_field :psychic %>
+  </p>
+  <p>
+    <%= f.label :chance_to_hit %><br />
+    <%= f.text_field :chance_to_hit %>
+  </p>
+  <p>
+    <%= f.label :chance_to_block %><br />
+    <%= f.text_field :chance_to_block %>
+  </p>
+  <p>
+    <%= f.label :chance_to_max_damage %><br />
+    <%= f.text_field :chance_to_max_damage %>
+  </p>
+  <p>
+    <%= f.label :fire_damage %><br />
+    <%= f.text_field :fire_damage %>
+  </p>
+  <p>
+    <%= f.label :chance_magic %><br />
+    <%= f.text_field :chance_magic %>
+  </p>
+  <p>
+    <%= f.label :ice_damage %><br />
+    <%= f.text_field :ice_damage %>
+  </p>
+  <p>
+    <%= f.label :fire_resist %><br />
+    <%= f.text_field :fire_resist %>
+  </p>
+  <p>
+    <%= f.label :ice_resist %><br />
+    <%= f.text_field :ice_resist %>
+  </p>
+  <p>
+    <%= f.label :drain_life %><br />
+    <%= f.text_field :drain_life %>
+  </p>
+    <p>
+    <%= f.label :item_type%><br />
+    <%= f.text_field :item_type %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @item_boni %> |
+<%= link_to 'Back', item_bonis_path %>

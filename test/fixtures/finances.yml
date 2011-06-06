@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reason: MyString
+  name: MyString
+  how_much: 
+  spending_type: MyString
+
+two:
+  reason: MyString
+  name: MyString
+  how_much: 
+  spending_type: MyString

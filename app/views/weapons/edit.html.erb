@@ -1,0 +1,40 @@
+<h1>Editing weapon</h1>
+
+<% form_for(@weapon) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :range %><br/>
+      <%= f.text_field :range %>
+    </p>
+    <p>
+      <%= f.label :damage %><br/>
+      <%= f.text_field :damage %>
+    </p>
+    <p>
+      <%= f.label :level %><br/>
+      <%= f.text_field :level %>
+    </p>
+    <p>
+      <%= f.label :damage_type %><br/>
+      <%= f.text_field :damage_type %>
+    </p>
+    <p>
+      <%= f.label :hit_time %><br/>
+      <%= f.text_field :hit_time %>
+    </p>
+    <p>
+      <%= f.label :worth %><br/>
+      <%= f.text_field :worth %>
+    </p>
+    <p>
+      <%= f.submit "Update" %>
+    </p>
+<% end %>
+
+<%= link_to 'Show', @weapon %> |
+<%= link_to 'Back', weapons_path %>
